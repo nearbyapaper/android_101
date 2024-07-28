@@ -26,7 +26,7 @@ abstract class APILoadingHandler : Fragment(), IAPILoading {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_api_loading, container, false)
         // Attach the ProgressBar to the layout
-        progressBar = view.findViewById(R.id.progressBar)
+//        progressBar = view.findViewById(R.id.progressBar)
         Log.d("APILoadingHandler", "ProgressBar initialized in onCreateView: $progressBar")
         return view
     }

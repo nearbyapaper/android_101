@@ -22,33 +22,33 @@ class CoffeeDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_coffee_detail)
 
 
-        Log.d("1995", "onCreate CoffeeDetailActivity")
-        var intent = intent
-        bindWidget()
-        Log.d("1995", "titleTextView")
-        titleTextView?.text = intent.getStringExtra("COFFEE_TITLE")
-        Log.d("1995", "contentTextView")
-        contentTextView?.text = intent.getStringExtra("COFFEE_CONTENT")
-//        coffeeImageView?.setImageResource(intent.getIntExtra("COFFEE_CONTENT",0))
-        Log.d("1995", "coffeeImageView")
-        Picasso.get().load(intent.getStringExtra("COFFEE_IMAGE")).error(R.mipmap.ic_launcher)
-            .placeholder(R.mipmap.ic_launcher_round).into(coffeeImageView)
-
-        button?.setOnClickListener {
-            goToNote()
-        }
-        Log.d("1995", "done !!!")
+//        Log.d("1995", "onCreate CoffeeDetailActivity")
+//        var intent = intent
+//        bindWidget()
+//        Log.d("1995", "titleTextView")
+//        titleTextView?.text = intent.getStringExtra("COFFEE_TITLE")
+//        Log.d("1995", "contentTextView")
+//        contentTextView?.text = intent.getStringExtra("COFFEE_CONTENT")
+////        coffeeImageView?.setImageResource(intent.getIntExtra("COFFEE_CONTENT",0))
+//        Log.d("1995", "coffeeImageView")
+//        Picasso.get().load(intent.getStringExtra("COFFEE_IMAGE")).error(R.mipmap.ic_launcher)
+//            .placeholder(R.mipmap.ic_launcher_round).into(coffeeImageView)
+//
+//        button?.setOnClickListener {
+//            goToNote()
+//        }
+//        Log.d("1995", "done !!!")
     }
 
     private fun goToNote() {
-        val intent = Intent(this,NoteActivity::class.java)
-        startActivity(intent)
+//        val intent = Intent(this,NoteActivity::class.java)
+//        startActivity(intent)
     }
 
     private fun bindWidget() {
-        titleTextView = findViewById(R.id.showTitleTextView)
-        contentTextView = findViewById(R.id.contentCoffeTextView)
-        coffeeImageView = findViewById(R.id.coffeeImageView)
-        button = findViewById(R.id.coffeeButton)
+//        titleTextView = findViewById(R.id.showTitleTextView)
+//        contentTextView = findViewById(R.id.contentCoffeTextView)
+//        coffeeImageView = findViewById(R.id.coffeeImageView)
+//        button = findViewById(R.id.coffeeButton)
     }
 }

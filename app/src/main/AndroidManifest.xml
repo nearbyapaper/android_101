@@ -17,20 +17,6 @@
         android:theme="@style/Theme.Neardroid"
         tools:targetApi="31">
         <activity
-            android:name=".NoteDetailActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".NoteActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".CoffeeDetailActivity"
             android:exported="false"
             android:label="@string/title_activity_coffee_detail"
