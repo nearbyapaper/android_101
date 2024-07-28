@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-
+    // main
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.12.0'
@@ -63,20 +63,23 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
     // RxKotlin
     implementation("io.reactivex.rxjava3:rxkotlin:3.0.1")
-
-
-//    implementation "com.squareup.retrofit2:retrofit:2.2.0"
-//    implementation "com.squareup.retrofit2:converter-gson:2.2.0"
-//    implementation "io.reactivex.rxjava2:rxjava:2.2.7"
-
-
-
-
+    // LiveCycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
     // add rxjava3-retrofit-adapter for handle data from retrofit <--> Rx
     implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+    // ktor
+    implementation("io.ktor:ktor-client-core:2.2.3")
+    implementation("io.ktor:ktor-client-content-negotiation:2.2.3")
+    implementation("io.ktor:ktor-client-okhttp:2.2.3")
+    // add chucker for logging http request/response
+    implementation 'com.github.chuckerteam.chucker:library:4.0.0'
+    debugImplementation 'com.github.chuckerteam.chucker:library:4.0.0'
+    releaseImplementation 'com.github.chuckerteam.chucker:library-no-op:4.0.0'
     // add picasso for image downloading and caching library for Android
     implementation 'com.squareup.picasso:picasso:2.8'
-
 //    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.8.0'
 //    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0'
     testImplementation 'junit:junit:4.13.2'
