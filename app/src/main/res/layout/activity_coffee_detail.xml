@@ -5,5 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CoffeeDetailActivity">
+    <LinearLayout
+        android:id="@+id/fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints" />
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/oneFragment"-->
+    <!--        android:name="com.example.neardroid.OneFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/twoFragment"-->
+    <!--        android:name="com.example.neardroid.TwoFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        tools:ignore="MissingConstraints" />-->
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/threeFragment"-->
+    <!--        android:name="com.example.neardroid.ThreeFragment"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        tools:ignore="MissingConstraints" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
