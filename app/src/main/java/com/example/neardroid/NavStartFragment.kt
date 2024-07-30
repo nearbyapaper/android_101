@@ -1,6 +1,5 @@
 package com.example.neardroid
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,21 +11,24 @@ import androidx.navigation.Navigation
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//private const val ARG_PARAM1 = "param1"
-//private const val ARG_PARAM2 = "param2"
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ThreeFragment.newInstance] factory method to
+ * Use the [NavStartFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ThreeFragment : Fragment() {
+class NavStartFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var navButton: Button ?= null
-    private val activity by lazy { requireActivity() as CoffeeDetailActivity }
+    var setButton: Button? = null
+    var historyButton: Button? = null
+
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
@@ -34,16 +36,23 @@ class ThreeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_three, container, false)
+        return inflater.inflate(R.layout.fragment_nav_start, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        navButton = view.findViewById(R.id.navButton)
-        navButton?.setOnClickListener {
-            val intent = Intent(activity,TestNavGraphActivity::class.java)
-            startActivity(intent)
+        setButton = view.findViewById(R.id.setButton)
+        historyButton = view.findViewById(R.id.historyButton)
+
+        navController = Navigation.findNavController(view)
+
+        setButton?.setOnClickListener {
+            navController.navigate(R.id.action_navStartFragment_to_setFragment)
+        }
+
+        historyButton?.setOnClickListener {
+            navController.navigate(R.id.action_navStartFragment_to_setHistoryFragment)
         }
     }
 
@@ -54,12 +63,13 @@ class ThreeFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment ThreeFragment.
+         * @return A new instance of fragment NavStartFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance() =
-            ThreeFragment().apply {
+        fun newInstance(param1: String, param2: String) =
+            NavStartFragment().apply {
+
             }
     }
 }
