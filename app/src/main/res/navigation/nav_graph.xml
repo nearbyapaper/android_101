@@ -11,9 +11,13 @@
         tools:layout="@layout/fragment_nav_start" >
         <action
             android:id="@+id/action_navStartFragment_to_setFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
             app:destination="@id/setFragment" />
         <action
             android:id="@+id/action_navStartFragment_to_setHistoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
             app:destination="@id/setHistoryFragment" />
     </fragment>
     <fragment
@@ -23,6 +27,8 @@
         tools:layout="@layout/fragment_set" >
         <action
             android:id="@+id/action_setFragment_to_setHistoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:popEnterAnim="@anim/slide_in_left"
             app:destination="@id/setHistoryFragment" />
     </fragment>
     <fragment
