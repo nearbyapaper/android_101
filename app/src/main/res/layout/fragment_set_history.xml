@@ -41,4 +41,14 @@
         app:layout_constraintStart_toEndOf="@id/nameTextView"
         app:layout_constraintTop_toTopOf="@+id/nameTextView" />
 
+    <Button
+        android:id="@+id/matDesignButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="427dp"
+        android:text="Mat. Design"
+        app:layout_constraintTop_toTopOf="@+id/headerTextView"
+        tools:layout_editor_absoluteX="141dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

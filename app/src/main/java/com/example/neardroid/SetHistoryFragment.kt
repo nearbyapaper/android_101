@@ -1,11 +1,13 @@
 package com.example.neardroid
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -23,6 +25,7 @@ class SetHistoryFragment : Fragment() {
 
     private var nameText: TextView?= null
     private var valueText: TextView?= null
+    private var matDesignButton: Button?= null
 
     lateinit var navController: NavController
 
@@ -48,6 +51,11 @@ class SetHistoryFragment : Fragment() {
 
         nameText = view.findViewById(R.id.nameTextView)
         valueText = view.findViewById(R.id.valueTextView)
+        matDesignButton = view.findViewById(R.id.matDesignButton)
+        matDesignButton?.setOnClickListener {
+            val intent = Intent(activity,TestMaterialDesignActivity::class.java)
+            startActivity(intent)
+        }
 
         if (arguments?.isEmpty == true){
             nameText?.text = "None"
