@@ -23,6 +23,7 @@ import androidx.navigation.Navigation
 class ThreeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var navButton: Button ?= null
+    private var dataBindingButton: Button ?= null
     private val activity by lazy { requireActivity() as CoffeeDetailActivity }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,8 +42,15 @@ class ThreeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         navButton = view.findViewById(R.id.navButton)
+        dataBindingButton = view.findViewById(R.id.dataBindingButton)
+
         navButton?.setOnClickListener {
             val intent = Intent(activity,TestNavGraphActivity::class.java)
+            startActivity(intent)
+        }
+
+        dataBindingButton?.setOnClickListener {
+            val intent = Intent(activity,TestDataBindingActivity::class.java)
             startActivity(intent)
         }
     }

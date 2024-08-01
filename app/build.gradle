@@ -36,6 +36,11 @@ android {
         viewBinding true
     }
     buildToolsVersion '33.0.1'
+
+    // enable app use data binding
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
