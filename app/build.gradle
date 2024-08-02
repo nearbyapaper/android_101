@@ -72,7 +72,7 @@ dependencies {
     // RxKotlin
     implementation("io.reactivex.rxjava3:rxkotlin:3.0.1")
 
-    // LiveCycle
+//    // LiveCycle + ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
@@ -117,6 +117,12 @@ dependencies {
 
     // Material Design
     implementation 'com.google.android.material:material:1.13.0-alpha04'
+
+    // Room
+    implementation("androidx.room:room-runtime:2.6.1")
+    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:2.6.1")
 }
 
 apply plugin: 'kotlin-kapt'
