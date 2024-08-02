@@ -6,13 +6,13 @@ import androidx.room.*
 @Dao
 interface TodoDAO {
     @Update
-    fun updateTodo(obj: Todo)
+    suspend fun updateTodo(obj: Todo)
 
     @Insert
-    fun insertTodo(obj: Todo)
+     suspend fun insertTodo(obj: Todo)
 
     @Delete
-    fun deleteTodo(obj: Todo)
+    suspend fun deleteTodo(obj: Todo)
 
     @Query ("SELECT * FROM todo_table")
     fun queryTodo(): LiveData<List<Todo>>
