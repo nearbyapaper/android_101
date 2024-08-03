@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.neardroid.todo.TodoActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +25,8 @@ class ThreeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var navButton: Button ?= null
     private var dataBindingButton: Button ?= null
+    private var mvvmRoomButton: Button ?= null
+    private var mvvmRetrofitButton: Button ?= null
     private val activity by lazy { requireActivity() as CoffeeDetailActivity }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +46,7 @@ class ThreeFragment : Fragment() {
 
         navButton = view.findViewById(R.id.navButton)
         dataBindingButton = view.findViewById(R.id.dataBindingButton)
+        mvvmRoomButton = view.findViewById(R.id.mvvmRoomButton)
 
         navButton?.setOnClickListener {
             val intent = Intent(activity,TestNavGraphActivity::class.java)
@@ -51,6 +55,11 @@ class ThreeFragment : Fragment() {
 
         dataBindingButton?.setOnClickListener {
             val intent = Intent(activity,TestDataBindingActivity::class.java)
+            startActivity(intent)
+        }
+
+        mvvmRoomButton?.setOnClickListener {
+            val intent = Intent(activity, TodoActivity::class.java)
             startActivity(intent)
         }
     }

@@ -43,5 +43,27 @@
         app:layout_constraintTop_toBottomOf="@+id/navButton"
         tools:ignore="MissingConstraints" />
 
+    <Button
+        android:id="@+id/mvvmRoomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MVVM with Room"
+        app:layout_constraintEnd_toEndOf="@+id/dataBindingButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/dataBindingButton"
+        app:layout_constraintTop_toBottomOf="@+id/dataBindingButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mvvmRetrofitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MVVM with Retrofit"
+        app:layout_constraintEnd_toEndOf="@+id/mvvmRoomButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/mvvmRoomButton"
+        app:layout_constraintTop_toBottomOf="@+id/mvvmRoomButton"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
