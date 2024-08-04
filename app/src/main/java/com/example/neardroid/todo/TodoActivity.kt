@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.neardroid.R
@@ -61,8 +62,28 @@ class TodoActivity : AppCompatActivity(),OnCheckBoxListener {
     }
 
     private fun swipHelper() {
-        // crrate ItemTouchHelper
+        // this fun create ItemTouchHelper for slide left to delete record
 
+        // create callback for ItemTouchHelper
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT){
+            override fun onMove(
+                recyclerView: RecyclerView,
+                viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                viewModel.todoList.value?.get(viewHolder.adapterPosition)
+                    ?.let { viewModel.delete(it) }
+            }
+        }
+
+        // create ItemTouchHelper
+        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+        // bind ItemTouchHelper with Recyclerview
+        itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
     private fun observeData() {
