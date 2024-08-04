@@ -74,17 +74,20 @@ class TodoActivity : AppCompatActivity() {
         Log.d("1995","bindWidget recyclerView :: $recyclerView")
     }
 
-//    // for do someting after get result back from child Activity
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//        if(requestCode == REQUEST_ADD){
-//            val bundle = data?.getBundleExtra("bundle")
-//            val todoResult = bundle?.getParcelable<Todo>("newtodo")
-//            if (todoResult != null) {
-//                viewModel.insert(todoResult)
-//            }
-//        }
-//    }
+    // for do someting after get result back from child Activity
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == REQUEST_ADD){
+            Log.d("1995","data :: $data")
+            val bundle = data?.getBundleExtra("newtodo")
+            val todoResult = bundle?.getParcelable<Todo>("bundle")
+            Log.d("1995","bundle :: $bundle")
+            Log.d("1995","todoResult :: $todoResult")
+            if (todoResult != null) {
+                viewModel.insert(todoResult)
+            }
+        }
+    }
 
     companion object{
         val REQUEST_ADD = 1

@@ -35,7 +35,7 @@ abstract class TodoDB : RoomDatabase() {
                                 // Default = CPU (Calculate)
                                 // IO = API / Database
                                 getInstance(context).todoDao()
-                                    .insertTodo(Todo(0, "Initial Value", "12:00", false))
+                                    .insertTodo(Todo(0, "Initial Value", "12 : 00", false))
                             }
                         }
                     }).build()
