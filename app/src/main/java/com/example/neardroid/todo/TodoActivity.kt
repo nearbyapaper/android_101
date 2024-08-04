@@ -15,9 +15,10 @@ import com.example.neardroid.model.room.TodoDB
 import com.example.neardroid.model.room.repositories.TodoRepository
 import com.example.neardroid.model.room.viewmodel.TodoViewModel
 import com.example.neardroid.model.room.viewmodel.TodoViewModelFactory
+import com.example.neardroid.util.OnCheckBoxListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class TodoActivity : AppCompatActivity() {
+class TodoActivity : AppCompatActivity(),OnCheckBoxListener {
     lateinit  var recyclerView:RecyclerView
     lateinit var viewModel: TodoViewModel
     lateinit var todoAdapter: TodoListAdapter
@@ -42,9 +43,11 @@ class TodoActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this,factory).get(TodoViewModel::class.java)
         Log.d("1995","initUI viewModel :: $viewModel")
 
+        swipHelper()
+
         // prepare recycleview
         recyclerView.layoutManager = LinearLayoutManager(this)
-        todoAdapter = TodoListAdapter()
+        todoAdapter = TodoListAdapter(this)
         recyclerView.adapter = todoAdapter
         // add action FAB
         addFAB?.setOnClickListener {
@@ -55,6 +58,11 @@ class TodoActivity : AppCompatActivity() {
         }
 
         observeData()
+    }
+
+    private fun swipHelper() {
+        // crrate ItemTouchHelper
+
     }
 
     private fun observeData() {
@@ -91,5 +99,16 @@ class TodoActivity : AppCompatActivity() {
 
     companion object{
         val REQUEST_ADD = 1
+    }
+
+    override fun onCheck(position: Int, state: Boolean) {
+        val targetTodo = viewModel.todoList.value?.get(position)
+        Log.d("1995","onCheck targetTodo :: $targetTodo")
+        Log.d("1995","onCheck state :: $state")
+        if (targetTodo != null) {
+            Log.d("1995","update targetTodo ")
+            // update in DB when checkbox change
+            viewModel.update(Todo(targetTodo.id,targetTodo.title,targetTodo.time,state))
+        }
     }
 }
