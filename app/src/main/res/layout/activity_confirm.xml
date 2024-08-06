@@ -13,9 +13,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/saberTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
         tools:text="TextView" />
 
     <TextView
@@ -24,31 +27,49 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/forceTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameTextView"
         tools:text="TextView" />
 
     <TextView
-            android:id="@+id/forceTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            app:layout_constraintBaseline_toBaselineOf="@id/saberTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toEndOf="@+id/saberTextView"
-            app:layout_constraintTop_toTopOf="@+id/saberTextView"
-            tools:text="TextView" />
+        android:id="@+id/forceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/jediButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/saberTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saberTextView"
+        tools:text="TextView" />
 
     <Button
         android:id="@+id/jediButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Jedi List"
-        app:layout_constraintTop_toBottomOf="@+id/saberTextView"
-        tools:layout_editor_absoluteX="159dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/testAppDialogButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forceTextView"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/testAppDialogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test App Dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jediButton"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
