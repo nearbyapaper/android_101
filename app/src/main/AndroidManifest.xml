@@ -17,9 +17,12 @@
         android:theme="@style/Theme.Neardroid"
         tools:targetApi="31">
         <activity
+            android:name=".album.ui.TestRetrofitActivity"
+            android:exported="false" />
+        <activity
             android:name=".todo.AddTodoActivity"
-            android:parentActivityName=".todo.TodoActivity"
-            android:exported="false">
+            android:exported="false"
+            android:parentActivityName=".todo.TodoActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

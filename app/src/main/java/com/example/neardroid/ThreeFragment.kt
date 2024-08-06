@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.neardroid.album.ui.TestRetrofitActivity
 import com.example.neardroid.todo.TodoActivity
 
 // TODO: Rename parameter arguments, choose names that match
@@ -47,6 +48,7 @@ class ThreeFragment : Fragment() {
         navButton = view.findViewById(R.id.navButton)
         dataBindingButton = view.findViewById(R.id.dataBindingButton)
         mvvmRoomButton = view.findViewById(R.id.mvvmRoomButton)
+        mvvmRetrofitButton = view.findViewById(R.id.mvvmRetrofitButton)
 
         navButton?.setOnClickListener {
             val intent = Intent(activity,TestNavGraphActivity::class.java)
@@ -60,6 +62,11 @@ class ThreeFragment : Fragment() {
 
         mvvmRoomButton?.setOnClickListener {
             val intent = Intent(activity, TodoActivity::class.java)
+            startActivity(intent)
+        }
+
+        mvvmRetrofitButton?.setOnClickListener {
+            val intent = Intent(activity,TestRetrofitActivity::class.java)
             startActivity(intent)
         }
     }
