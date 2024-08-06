@@ -55,14 +55,25 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/mvvmRetrofitButton"
+        android:id="@+id/simpleRetrofitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MVVM with Retrofit"
+        android:text="Simple Retrofit"
         app:layout_constraintEnd_toEndOf="@+id/mvvmRoomButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/mvvmRoomButton"
         app:layout_constraintTop_toBottomOf="@+id/mvvmRoomButton"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/mvvmRetrofitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MVVM with Retrofit"
+        app:layout_constraintEnd_toEndOf="@+id/simpleRetrofitButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/simpleRetrofitButton"
+        app:layout_constraintTop_toBottomOf="@+id/simpleRetrofitButton"
         tools:ignore="MissingConstraints" />
 
 

@@ -28,6 +28,7 @@ class ThreeFragment : Fragment() {
     private var dataBindingButton: Button ?= null
     private var mvvmRoomButton: Button ?= null
     private var mvvmRetrofitButton: Button ?= null
+    private var simpleRetrofitButton: Button ?= null
     private val activity by lazy { requireActivity() as CoffeeDetailActivity }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,6 +50,7 @@ class ThreeFragment : Fragment() {
         dataBindingButton = view.findViewById(R.id.dataBindingButton)
         mvvmRoomButton = view.findViewById(R.id.mvvmRoomButton)
         mvvmRetrofitButton = view.findViewById(R.id.mvvmRetrofitButton)
+        simpleRetrofitButton = view.findViewById(R.id.simpleRetrofitButton)
 
         navButton?.setOnClickListener {
             val intent = Intent(activity,TestNavGraphActivity::class.java)
@@ -65,8 +67,13 @@ class ThreeFragment : Fragment() {
             startActivity(intent)
         }
 
-        mvvmRetrofitButton?.setOnClickListener {
+        simpleRetrofitButton?.setOnClickListener {
             val intent = Intent(activity,TestRetrofitActivity::class.java)
+            startActivity(intent)
+        }
+
+        mvvmRetrofitButton?.setOnClickListener {
+            val intent = Intent(activity,MVVMWithRetrofitActivity::class.java)
             startActivity(intent)
         }
     }

@@ -54,11 +54,9 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
 
-    // add dagger
-    implementation 'com.google.dagger:dagger:2.51'
-    implementation 'androidx.activity:activity:1.8.0'
-    kapt 'com.google.dagger:dagger-compiler:2.51'
-    implementation "javax.inject:javax.inject:1"
+    // Dependency Injection use Dagger
+    implementation 'com.google.dagger:dagger:2.51.1'
+    kapt 'com.google.dagger:dagger-compiler:2.51.1'
 
     // add retrofit for http request
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -74,7 +72,7 @@ dependencies {
     // RxKotlin
     implementation("io.reactivex.rxjava3:rxkotlin:3.0.1")
 
-//    // LiveCycle + ViewModel
+    // LiveCycle + ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
@@ -120,13 +118,18 @@ dependencies {
     // Material Design
     implementation 'com.google.android.material:material:1.13.0-alpha04'
 
-    // Room
+    // Room (Local DB)
     implementation("androidx.room:room-runtime:2.6.1")
     annotationProcessor("androidx.room:room-compiler:2.6.1")
     // Add the Room KTX dependency
     implementation "androidx.room:room-ktx:2.6.1"
     // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:2.6.1")
+
+    // Glide for manage image resource
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // Dependency Injection
 }
 
 apply plugin: 'kotlin-kapt'
