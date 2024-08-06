@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.neardroid.MainActivity
 import com.example.neardroid.R
 import com.example.neardroid.login.activity.ui.login.LoginActivity
+import com.example.neardroid.util.AppToast
 
 class LoginFragment : Fragment() {
 
@@ -33,6 +34,7 @@ class LoginFragment : Fragment() {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
+            AppToast(activity).create(activity,"username : $username / password : $password").show()
             // Handle login logic here
 //            viewModel.login(username,password)
 
