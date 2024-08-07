@@ -1,6 +1,8 @@
 package com.example.neardroid
 
+import android.widget.FrameLayout
+
 interface IAPILoading {
-    fun loadingAPI()
     fun closeLoadingAPI()
+    fun loadingAPI(parentView: FrameLayout)
 }
