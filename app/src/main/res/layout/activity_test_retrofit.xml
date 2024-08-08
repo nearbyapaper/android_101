@@ -8,38 +8,51 @@
     tools:context=".album.ui.TestRetrofitActivity">
 
 
-
-    <TextView
-        android:id="@+id/responseFixPosTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:text="TextView"
-        android:textColor="@color/green_yoda"
-        android:textSize="30sp"
+    <FrameLayout
+        android:id="@+id/simple_retrofit_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="1"
+        app:layout_constraintHeight_percent="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/responseTextView"
-        app:layout_constraintVertical_bias="0.5"
-        tools:ignore="NotSibling" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
-    <TextView
-        android:id="@+id/responseTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@+id/responseFixPosTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
-    </ScrollView>
+        <TextView
+            android:id="@+id/responseFixPosTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:text="TextView"
+            android:textColor="@color/green_yoda"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/responseTextView"
+            app:layout_constraintVertical_bias="0.5"
+            tools:ignore="NotSibling" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+            <TextView
+                android:id="@+id/responseTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@+id/responseFixPosTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+        </ScrollView>
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
