@@ -1,10 +1,12 @@
-package com.example.neardroid
+package com.example.neardroid.mvvmretrofit.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
+import com.example.neardroid.R
+import dagger.hilt.android.AndroidEntryPoint
 
 class MVVMWithRetrofitActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar

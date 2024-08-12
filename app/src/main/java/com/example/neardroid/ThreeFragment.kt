@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.navigation.NavController
-import androidx.navigation.Navigation
 import com.example.neardroid.album.ui.TestRetrofitActivity
+import com.example.neardroid.mvvmretrofit.view.MVVMWithRetrofitActivity
 import com.example.neardroid.todo.TodoActivity
 
 // TODO: Rename parameter arguments, choose names that match
@@ -73,7 +72,7 @@ class ThreeFragment : Fragment() {
         }
 
         mvvmRetrofitButton?.setOnClickListener {
-            val intent = Intent(activity,MVVMWithRetrofitActivity::class.java)
+            val intent = Intent(activity, MVVMWithRetrofitActivity::class.java)
             startActivity(intent)
         }
     }

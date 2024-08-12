@@ -1,10 +1,17 @@
+// App-level build.gradle (usually located in the app module)
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    id("kotlin-parcelize")
+    id 'kotlin-parcelize'
     id 'kotlin-android'
 }
+
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-android'
 
 android {
     namespace 'com.example.neardroid'
@@ -25,6 +32,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        budug {
+            // keep config value
+            buildConfigField("String", "COUNTRY", "\"th\"")
+            resValue("string", "country_name", "th")
+
+            buildConfigField("String", "API_KEY", "\"c914619ecb3245f7a1fc8d9ef7df409c\"")
+            resValue("string", "api_key", "c914619ecb3245f7a1fc8d9ef7df409c")
+        }
     }
 
     compileOptions {
@@ -40,7 +55,7 @@ android {
     buildToolsVersion '33.0.1'
 
     // enable app use data binding
-    dataBinding{
+    dataBinding {
         enabled = true
     }
 }
@@ -55,23 +70,34 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.7.7'
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.7'
 
-    // Dependency Injection use Dagger2
-    implementation 'com.google.dagger:dagger:2.51.1'
-    kapt 'com.google.dagger:dagger-compiler:2.51.1'
+    // Dependency Injection with Dagger2
+    implementation 'com.google.dagger:dagger:2.44'
+    kapt 'com.google.dagger:dagger-compiler:2.44'
+    // For Android
+    implementation 'com.google.dagger:dagger-android:2.44'
+    implementation 'com.google.dagger:dagger-android-support:2.44'
+    kapt 'com.google.dagger:dagger-android-processor:2.44'
 
-    // add retrofit for http request
+    // Hilt dependency-injection
+    implementation 'com.google.dagger:hilt-android:2.44'
+    kapt 'com.google.dagger:hilt-compiler:2.44'
+
+    // For instrumentation tests
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.44'
+    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.44'
+
+    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.44'
+    kaptTest 'com.google.dagger:hilt-compiler:2.44'
+
+    // add retrofit for HTTP requests
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
-    // add RxJava + RxAndroid for reactive(asyanchronus) programming
-    // handle Observable
+    // add RxJava + RxAndroid for reactive (asynchronous) programming
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.2'
-    // Because RxAndroid releases are few and far between, it is recommended you also
-    // explicitly depend on RxJava's latest version for bug fixes and new features.
-    // (see https://github.com/ReactiveX/RxJava/releases for latest 3.x.x version)
     implementation 'io.reactivex.rxjava3:rxjava:3.1.5'
-    // RxKotlin
-    implementation("io.reactivex.rxjava3:rxkotlin:3.0.1")
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.1'
 
     // LiveCycle + ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
@@ -79,20 +105,20 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
 
-    // add rxjava3-retrofit-adapter for handle data from retrofit <--> Rx
+    // add rxjava3-retrofit-adapter for handling data from retrofit <--> Rx
     implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
 
-    // ktor
+    // Ktor
     implementation("io.ktor:ktor-client-core:2.2.3")
     implementation("io.ktor:ktor-client-content-negotiation:2.2.3")
     implementation("io.ktor:ktor-client-okhttp:2.2.3")
 
-    // add chucker for logging http request/response
+    // add Chucker for logging HTTP requests/responses
     implementation 'com.github.chuckerteam.chucker:library:4.0.0'
     debugImplementation 'com.github.chuckerteam.chucker:library:4.0.0'
     releaseImplementation 'com.github.chuckerteam.chucker:library-no-op:4.0.0'
 
-    // add picasso for image downloading and caching library for Android
+    // add Picasso for image downloading and caching library for Android
     implementation 'com.squareup.picasso:picasso:2.8'
 
     testImplementation 'junit:junit:4.13.2'
@@ -121,14 +147,14 @@ dependencies {
 
     // Room (Local DB)
     implementation("androidx.room:room-runtime:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
-    // Add the Room KTX dependency
-    implementation "androidx.room:room-ktx:2.6.1"
-    // To use Kotlin annotation processing tool (kapt)
     kapt("androidx.room:room-compiler:2.6.1")
+    implementation "androidx.room:room-ktx:2.6.1"
 
-    // Glide for manage image resource
+    // Glide for image management
     implementation 'com.github.bumptech.glide:glide:4.16.0'
 }
 
-apply plugin: 'kotlin-kapt'
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
+}
