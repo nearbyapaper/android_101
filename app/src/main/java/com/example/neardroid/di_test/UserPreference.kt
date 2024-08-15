@@ -1,4 +1,4 @@
-package com.example.neardroid.testdi
+package com.example.neardroid.di_test
 
 import android.content.Context
 import android.content.SharedPreferences
