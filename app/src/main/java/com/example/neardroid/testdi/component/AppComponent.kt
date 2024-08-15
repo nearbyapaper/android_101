@@ -2,6 +2,7 @@ package com.example.neardroid.testdi.component
 
 import android.app.Application
 import com.example.neardroid.testdi.application.AwesomeApplication
+//import com.example.neardroid.testdi.module.ActivityModule
 import com.example.neardroid.testdi.module.PreferenceModule
 import dagger.BindsInstance
 import dagger.Component
@@ -12,7 +13,8 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class, // init module
-        PreferenceModule::class  // manual add module
+        PreferenceModule::class,  // manual add module
+//        ActivityModule::class // manual add module
     ])
 interface AppComponent {
     @Component.Builder

@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.neardroid.R
 import com.example.neardroid.login.fragment.ui.login.LoginFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     // val
 //    @Inject lateinit var factory: LoginViewModelFactory

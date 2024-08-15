@@ -4,11 +4,13 @@ import com.example.neardroid.testdi.UserPreference
 import com.example.neardroid.testdi.application.AwesomeApplication
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import dagger.hilt.migration.DisableInstallInCheck
 import javax.inject.Singleton
 
 @Module
-//@DisableInstallInCheck
+@InstallIn(SingletonComponent::class)
 class PreferenceModule {
     @Singleton
     @Provides

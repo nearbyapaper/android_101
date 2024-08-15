@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.neardroid.model.Coffee
+import com.example.neardroid.testdi.UserPreference
 import com.google.gson.GsonBuilder
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -20,8 +21,12 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
+import javax.inject.Inject
 
-class CoffeeActivity : AppCompatActivity(),IAPILoading {
+class CoffeeActivity @Inject constructor(
+    private val coffeeAPI: INetworkAPI,
+    private val userPreference: UserPreference
+) : AppCompatActivity(),IAPILoading {
     // var
     private var rcView: RecyclerView? = null
     private lateinit var progressBar: ProgressBar

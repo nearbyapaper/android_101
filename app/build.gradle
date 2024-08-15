@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'kotlin-android'
+    id 'com.google.dagger.hilt.android'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -72,11 +73,13 @@ dependencies {
 
     // Dependency Injection with Dagger2
     implementation 'com.google.dagger:dagger:2.44'
+    implementation 'androidx.activity:activity:1.9.1'
     kapt 'com.google.dagger:dagger-compiler:2.44'
     // For Android
     implementation 'com.google.dagger:dagger-android:2.44'
     implementation 'com.google.dagger:dagger-android-support:2.44'
     kapt 'com.google.dagger:dagger-android-processor:2.44'
+    kapt "com.google.dagger:dagger-compiler:2.44"
 
     // Hilt dependency-injection
     implementation 'com.google.dagger:hilt-android:2.44'

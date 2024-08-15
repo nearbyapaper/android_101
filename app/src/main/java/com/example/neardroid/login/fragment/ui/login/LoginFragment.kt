@@ -12,7 +12,9 @@ import com.example.neardroid.MainActivity
 import com.example.neardroid.R
 import com.example.neardroid.login.activity.ui.login.LoginActivity
 import com.example.neardroid.util.AppToast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint // use AndroidEntryPoint annotation on your LoginFragment to generate the required component
 class LoginFragment : Fragment() {
 
     // val
