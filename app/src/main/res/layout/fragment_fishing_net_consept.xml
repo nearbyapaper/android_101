@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deep_blue"
+    tools:context=".invest.fisginh_net.fragment.FishingNetConseptFragment">
+        <TextView
+            android:id="@+id/mainTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ธุรกิจที่มีแหจับปลา"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/gold"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="24dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/ruleTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/mainTextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginVertical="4dp"
+            android:textColor="@color/gold"
+            android:text="1 . ธุรกิจนั้นส่งมอบคุณค่า (สินค้า, บริการ) ให้กับลูกค้า ?"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/ruleTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/ruleTextView1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginVertical="4dp"
+            android:textColor="@color/gold"
+            android:text="2. มีคนอื่นส่งมอบคุณค่านั้นด้วยหรือไม่ ?"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/ruleTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/ruleTextView2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginVertical="4dp"
+            android:textColor="@color/gold"
+            android:text="3. ฉันจะเลือกรับคุณค่านั้นจากที่อื่น แทนที่จะเป็นที่นี่หรือไม่ ?"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/ruleTextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="4. ทำไมเราเลือกจะรับคุณค่านั้นจากที่นี่ แทนที่จะเป็นที่อื่น ?"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginVertical="4dp"
+            android:textColor="@color/gold"
+            app:layout_constraintTop_toBottomOf="@id/ruleTextView3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/ruleTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/ruleTextView4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginVertical="4dp"
+            android:textColor="@color/gold"
+            android:text="5. เหตุผลที่ระบุในข้อ 4 เป็นสิ่งที่ยั่งยืนในระยะยาวหรือไม่ ?"
+            tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/findButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find"
+        app:layout_constraintTop_toBottomOf="@id/ruleTextView5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="16dp"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

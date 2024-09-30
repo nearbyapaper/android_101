@@ -2,6 +2,8 @@ package com.example.neardroid.di_test
 
 import android.content.Context
 import com.example.neardroid.INetworkAPI
+import com.example.neardroid.api.WebserviceAPI
+import com.example.neardroid.login.repository.LoginRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,5 +20,11 @@ object AppModule {
     @Provides
     fun provideUserPreference(@ApplicationContext context: Context): UserPreference {
         return UserPreference(context)
+    }
+
+    @Singleton
+    @Provides
+    fun provideLoginRepositoty(userPreference: UserPreference, apiService: WebserviceAPI): LoginRepository {
+        return LoginRepository(userPreference, apiService)
     }
 }

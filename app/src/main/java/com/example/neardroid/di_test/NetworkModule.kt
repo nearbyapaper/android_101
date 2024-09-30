@@ -1,6 +1,8 @@
 package com.example.neardroid.di_test
 
 import com.example.neardroid.INetworkAPI
+import com.example.neardroid.api.WebserviceAPI
+import com.example.neardroid.invest.fisginh_net.network.FishingNetAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +16,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    private const val BASE_URL = "https://antchatbot.firebaseio.com/" // Replace with your actual base URL
+    private const val BASE_URL = "http://0.0.0.0:8080/" // Replace with your actual base URL
 
     @Provides
     @Singleton
@@ -28,7 +30,14 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideCoffeeAPI(retrofit: Retrofit): INetworkAPI {
-        return retrofit.create(INetworkAPI::class.java)
+    fun provideLoginAPI(retrofit: Retrofit): WebserviceAPI {
+        return retrofit.create(WebserviceAPI::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideFishingNetAPI(retrofit: Retrofit): FishingNetAPI {
+        return retrofit.create(FishingNetAPI::class.java)
+    }
+
 }

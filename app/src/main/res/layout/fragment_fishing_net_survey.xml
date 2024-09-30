@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@color/deep_blue"
+    tools:context=".invest.fisginh_net.fragment.FishingNetSurveyFragment">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gold"
+        android:text="ชื่อของธุรกิจที่สนใจ"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/nameTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gold"
+        android:text="ธุรกิจนั้นส่งมอบคุณค่า (สินค้า, บริการ) ให้กับลูกค้า"
+        app:layout_constraintTop_toBottomOf="@id/nameEditText"
+        android:layout_marginTop="14dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/questionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/questionTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gold"
+        android:text="มีคนอื่นส่งมอบคุณค่านั้นด้วยหรือไม่"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@id/questionEditText"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/questionEditText2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/questionTextView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gold"
+        android:text="ฉันจะเลือกรับคุณค่านั้นจากที่อื่น แทนที่จะเป็นที่นี่หรือไม่"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/questionEditText2"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/questionEditText3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/questionTextView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gold"
+        android:text="ทำไมเราเลือกจะรับคุณค่านั้นจากที่นี่ แทนที่จะเป็นที่อื่น"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/questionEditText3"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/questionEditText4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/questionTextView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gold"
+        android:text="เหตุผลที่ระบุในข้อ 4 เป็นสิ่งที่ยั่งยืนในระยะยาวหรือไม่"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/questionEditText4"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/questionEditText5"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:layout_marginTop="8dp"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/gold"
+        app:layout_constraintTop_toBottomOf="@id/questionEditText5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

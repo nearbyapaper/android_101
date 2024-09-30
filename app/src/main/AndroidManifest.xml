@@ -18,6 +18,9 @@
         android:theme="@style/Theme.Neardroid"
         tools:targetApi="31">
         <activity
+            android:name=".invest.fisginh_net.activity.FishNetActivity"
+            android:exported="false" />
+        <activity
             android:name=".mvvmretrofit.view.MVVMWithRetrofitActivity"
             android:exported="false" />
         <activity
