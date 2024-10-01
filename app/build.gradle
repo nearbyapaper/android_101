@@ -13,6 +13,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'kotlin-parcelize'
 apply plugin: 'kotlin-android'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     namespace 'com.example.neardroid'
@@ -32,8 +33,18 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            // keep config value
+            buildConfigField("String", "COUNTRY", "\"th\"")
+            resValue("string", "country_name", "th")
+
+            buildConfigField("String", "API_KEY", "\"c914619ecb3245f7a1fc8d9ef7df409c\"")
+            resValue("string", "api_key", "c914619ecb3245f7a1fc8d9ef7df409c")
         }
         budug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
             // keep config value
             buildConfigField("String", "COUNTRY", "\"th\"")
             resValue("string", "country_name", "th")
@@ -52,6 +63,7 @@ android {
     }
     buildFeatures {
         viewBinding true
+        buildConfig = true // enable buildConfig
     }
     buildToolsVersion '33.0.1'
 
@@ -124,11 +136,6 @@ dependencies {
     implementation("io.ktor:ktor-client-content-negotiation:2.2.3")
     implementation("io.ktor:ktor-client-okhttp:2.2.3")
 
-    // add Chucker for logging HTTP requests/responses
-    implementation 'com.github.chuckerteam.chucker:library:4.0.0'
-    debugImplementation 'com.github.chuckerteam.chucker:library:4.0.0'
-    releaseImplementation 'com.github.chuckerteam.chucker:library-no-op:4.0.0'
-
     // add Picasso for image downloading and caching library for Android
     implementation 'com.squareup.picasso:picasso:2.8'
 
@@ -178,8 +185,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // Hilt Testing
-    androidTestImplementation "com.google.dagger:hilt-android-testing:<1.2.0>"
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:<1.2.0>"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.44"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.44"
 
     // Mockito
     testImplementation 'org.mockito:mockito-core:4.3.1'

@@ -9,7 +9,7 @@ import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.chuckerteam.chucker.api.ChuckerInterceptor
+//import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.google.gson.GsonBuilder
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -48,9 +48,9 @@ class CoffeeActivity (): AppCompatActivity(),IAPILoading {
 
         var baseURL = "https://antchatbot.firebaseio.com/"
 
-        val httpClient = OkHttpClient.Builder()
-            .addInterceptor(ChuckerInterceptor(this)).
-            build()
+//        val httpClient = OkHttpClient.Builder()
+////            .addInterceptor(ChuckerInterceptor(this)).
+//            build()
 
         // create retrofit [async]
         val retrofit = Retrofit.Builder().addConverterFactory(
@@ -58,7 +58,7 @@ class CoffeeActivity (): AppCompatActivity(),IAPILoading {
                 GsonBuilder().create()
             )
         ).addCallAdapterFactory(RxJava3CallAdapterFactory.create()).baseUrl(baseURL)
-            .client(httpClient)
+//            .client(httpClient)
             .build()
 
         val postCoffeeAPI = retrofit.create(INetworkAPI::class.java)
@@ -66,7 +66,7 @@ class CoffeeActivity (): AppCompatActivity(),IAPILoading {
 
         responseAPI.observeOn(AndroidSchedulers.mainThread()).subscribeOn(IoScheduler())
             .subscribe { it ->
-                if (it?.isNotEmpty() == true) {
+                if (it.isNotEmpty()) {
                     rcView?.adapter = CoffeeAdapter(it, this)
 
                 }

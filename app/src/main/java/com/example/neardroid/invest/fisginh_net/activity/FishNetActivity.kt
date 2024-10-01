@@ -1,6 +1,7 @@
 package com.example.neardroid.invest.fisginh_net.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -8,6 +9,7 @@ import com.example.neardroid.R
 import com.example.neardroid.invest.fisginh_net.fragment.FishingNetConseptFragment
 import com.example.neardroid.invest.fisginh_net.viewmodel.FishingNetViewModel
 import com.example.neardroid.invest.fisginh_net.viewmodel.FishingNetViewModelFactory
+import com.example.neardroid.unittest.Homework
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -18,7 +20,7 @@ class FishNetActivity : AppCompatActivity() {
     lateinit var factory: FishingNetViewModelFactory
     lateinit var viewModel: FishingNetViewModel
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fish_net)
 
@@ -26,7 +28,7 @@ class FishNetActivity : AppCompatActivity() {
         setViewModel()
 
         supportFragmentManager.addOnBackStackChangedListener {
-            val fragment = supportFragmentManager.findFragmentById(R.id.fishingNetContent)
+            supportFragmentManager.findFragmentById(R.id.fishingNetContent)
         }
     }
 
@@ -56,7 +58,7 @@ class FishNetActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun setViewModel() {
+    fun setViewModel() {
         viewModel = ViewModelProvider(this, factory)[FishingNetViewModel::class.java]
     }
 }
